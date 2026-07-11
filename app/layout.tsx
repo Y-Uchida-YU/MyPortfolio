@@ -6,6 +6,11 @@ const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000",
+  ),
   title: "Yuta Uchida — Web Designer & Developer",
   description: "企画・デザイン・実装まで。業界ごとの体験を設計するWebポートフォリオ。",
   icons: { icon: "/favicon.svg" },
