@@ -9,8 +9,8 @@ const works = [
     year: "2026",
     tag: "E-COMMERCE / REUSE",
     title: "OTAKARA LOOP",
-    desc: "コレクターズグッズの買取・販売プラットフォーム。カート・購入履歴まで通しで設計。",
-    stack: ["EC UI", "Cart Flow", "Branding"],
+    desc: "コレクターズグッズの買取・販売プラットフォーム。",
+    stack: ["EC UI", "Cart Flow"],
     tone: "coral",
   },
   {
@@ -19,8 +19,8 @@ const works = [
     year: "2026",
     tag: "RECRUITING SITE",
     title: "HIRAKU 建設",
-    desc: "老舗建設会社の新卒・中途採用サイト。現場の熱量を採用ブランディングに翻訳。",
-    stack: ["Recruit", "Editorial", "Storytelling"],
+    desc: "老舗建設会社の新卒・中途採用サイト。",
+    stack: ["Recruit"],
     tone: "amber",
   },
   {
@@ -29,9 +29,19 @@ const works = [
     year: "2026",
     tag: "WEB3 / CORPORATE",
     title: "NULL / PROTOCOL",
-    desc: "スクロールに完全連動する没入型コーポレートサイト。Canvas と3D演出で世界観を構築。",
+    desc: "ITベンチャー企業を模して動きの多いサイトサンプル。",
     stack: ["Interaction", "Canvas", "Motion"],
     tone: "violet",
+  },
+  {
+    href: "/sports",
+    no: "04",
+    year: "2026",
+    tag: "SPORTS CLUB",
+    title: "AXIS SPORTS CLUB",
+    desc: "総合スポーツクラブの公式サイト。プログラム検索から料金プラン、体験予約までの導線を設計。",
+    stack: ["Fitness", "Schedule UI", "Pricing"],
+    tone: "lime",
   },
 ];
 
@@ -81,13 +91,12 @@ export default function Home() {
         <p className="h-eyebrow">WEB DESIGN &amp; DEVELOPMENT — TOKYO, JAPAN</p>
         <h1>
           <span className="line">
-            <b style={{ "--i": 0 } as React.CSSProperties}>Designing</b>
+            <b style={{ "--i": 0 } as React.CSSProperties}>My</b>
           </span>
           <span className="line">
             <b style={{ "--i": 1 } as React.CSSProperties}>
-              <em>useful</em>
+              <em>Portfolio</em>
             </b>
-            <b style={{ "--i": 2 } as React.CSSProperties}>moments.</b>
           </span>
         </h1>
         <div className="h-hero-foot">
@@ -96,8 +105,8 @@ export default function Home() {
             <br />
             企画からデザイン、実装まで一貫してつくります。
           </p>
-          <a href="#works" className="h-cta" aria-label="制作事例を見る">
-            <span>SELECTED WORKS</span>
+          <a href="#works" className="h-cta" aria-label="作成サイト一覧を見る">
+            <span>作成サイト一覧</span>
             <i>↘</i>
           </a>
         </div>
@@ -120,9 +129,9 @@ export default function Home() {
 
       <section className="h-works" id="works">
         <header className="h-section-head" data-reveal>
-          <span className="h-label">SELECTED WORKS</span>
+          <span className="h-label">WORKS</span>
           <h2>
-            つくったもの<em>／03</em>
+            作成サイト一覧<em>／04</em>
           </h2>
         </header>
 
@@ -165,7 +174,8 @@ export default function Home() {
 
       <section className="h-about" id="about">
         <div className="h-portrait" data-reveal>
-          <span className="h-portrait-mark">YU</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="h-portrait-photo" src="/portrait.png" alt="内田 裕太のアバターイラスト" />
           <span className="h-portrait-ring" />
           <span className="h-portrait-badge">
             CREATIVE
@@ -177,7 +187,7 @@ export default function Home() {
         <div className="h-about-body" data-reveal style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}>
           <span className="h-label">ABOUT ME</span>
           <h2>
-            内田 悠太 <small>YUTA UCHIDA</small>
+            内田 裕太 <small>YUTA UCHIDA</small>
           </h2>
           <p>
             Webサイトの設計とフロントエンド実装を中心に活動しています。業界ごとの空気感を捉え、情報を整理し、
