@@ -374,6 +374,10 @@
   background: radial-gradient(120% 140% at 80% 100%, #b4ff3c2b, transparent 60%);
 }
 
+.h-work.sun::before {
+  background: radial-gradient(120% 140% at 80% 100%, #ffcc0030, transparent 60%);
+}
+
 .h-work:hover {
   transform: translateY(-4px);
   border-color: #ffffff33;
@@ -461,6 +465,10 @@
   background: linear-gradient(140deg, #101b0e, #2e5d1f);
 }
 
+.h-work-thumb.sun {
+  background: linear-gradient(140deg, #ff8a00, #1780c9);
+}
+
 .thumb-art {
   width: 74px;
   height: 74px;
@@ -497,6 +505,14 @@
     linear-gradient(#d6ff4b 2px, transparent 2px) center / 100% 33.4%,
     radial-gradient(circle at 50% 50%, #d6ff4b22, transparent 70%);
   box-shadow: 0 0 42px #b4ff3c55;
+}
+
+.h-work-thumb.sun .thumb-art {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 30%, #fff, #ffe680 30%, transparent 55%),
+    repeating-conic-gradient(from 0deg, #ffffff00 0deg 12deg, #ffffff33 12deg 14deg);
+  box-shadow: 0 0 48px #ffcc0088;
 }
 
 .h-work-go {

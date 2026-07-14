@@ -43,6 +43,16 @@ const works = [
     stack: ["Fitness", "Schedule UI", "Pricing"],
     tone: "lime",
   },
+  {
+    href: "/baseball",
+    no: "05",
+    year: "2026",
+    tag: "SPORTS TEAM",
+    title: "汐風ボーイズ",
+    desc: "少年野球チームの公式サイト。夏の炎天下を駆け抜けるような、若さと熱量を前面に出したデザイン。",
+    stack: ["Team Branding", "Schedule", "Recruit"],
+    tone: "sun",
+  },
 ];
 
 const marquee = [
@@ -125,7 +135,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／04</em>
+            作成サイト一覧<em>／05</em>
           </h2>
         </header>
 
