@@ -54,12 +54,6 @@ const marquee = [
   "ART DIRECTION",
 ];
 
-const stats = [
-  ["6+", "YEARS OF CRAFT"],
-  ["40+", "PROJECTS SHIPPED"],
-  ["100%", "HAND-CODED"],
-];
-
 export default function Home() {
   return (
     <main className="home">
@@ -194,14 +188,6 @@ export default function Home() {
             見る人が自然に次の一歩へ進めるサイトづくりが得意です。デザインとコードの両方を行き来しながら、
             細部の手触りまで作り込みます。
           </p>
-          <div className="h-stats">
-            {stats.map(([value, label]) => (
-              <div key={label}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -209,13 +195,8 @@ export default function Home() {
         <span className="h-label" data-reveal>
           GET IN TOUCH
         </span>
-        <h2 data-reveal>
-          LET&apos;S MAKE
-          <br />
-          SOMETHING <em>MEMORABLE.</em>
-        </h2>
-        <a className="h-mail" href="mailto:hello@example.com" data-reveal>
-          hello@example.com
+        <a className="h-mail" href="mailto:yuta.uchida.business@gmail.com" data-reveal>
+          yuta.uchida.business@gmail.com
           <i>↗</i>
         </a>
         <div className="h-footer-foot">

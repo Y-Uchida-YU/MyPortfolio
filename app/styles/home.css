@@ -205,8 +205,7 @@
   animation-delay: calc(var(--i) * 0.11s + 0.15s);
 }
 
-.h-hero em,
-.h-footer em {
+.h-hero em {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-style: italic;
@@ -605,43 +604,14 @@
   color: #b4b0a9;
 }
 
-.h-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
-  margin-top: 46px;
-  padding-top: 34px;
-  border-top: 1px solid #ffffff14;
-}
-
-.h-stats strong {
-  display: block;
-  font-size: 42px;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-}
-
-.h-stats span {
-  font: 600 10px var(--font-mono), monospace;
-  letter-spacing: 0.14em;
-  color: #85817a;
-}
-
 /* ---------- footer ---------- */
 .h-footer {
   padding: 10vw 5vw 3vw;
   border-top: 1px solid #ffffff14;
 }
 
-.h-footer h2 {
-  margin: 26px 0 50px;
-  font-size: clamp(44px, 8vw, 130px);
-  font-weight: 600;
-  line-height: 0.94;
-  letter-spacing: -0.06em;
-}
-
 .h-mail {
+  margin-top: 34px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -715,10 +685,6 @@
 
   .h-hero h1 {
     margin: 30px 0 44px;
-  }
-
-  .h-stats {
-    gap: 28px;
   }
 
   .h-footer-foot {
