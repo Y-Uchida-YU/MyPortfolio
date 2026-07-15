@@ -96,6 +96,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: clip;
+}
+
+.sp-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  z-index: 0;
+}
+
+.sp-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(100deg, #0c1210f2 0%, #0c1210d9 42%, #0c121066 78%, #0c121033 100%);
+}
+
+.sp-hero .sp-court {
+  z-index: 1;
+}
+
+.sp-hero-badge,
+.sp-scroll {
+  z-index: 2;
 }
 
 .sp-kicker,
@@ -107,6 +135,7 @@
 
 .sp-hero-copy {
   position: relative;
+  z-index: 2;
   max-width: 900px;
 }
 
@@ -364,32 +393,32 @@
 /* CSS-drawn art per program. */
 .sp-program-art {
   min-height: 320px;
+  background-size: cover;
+  background-position: center;
 }
 
 .sp-program-art.gym {
-  background:
-    repeating-linear-gradient(90deg, #c8f54226 0 6px, transparent 6px 44px),
-    linear-gradient(150deg, #1c2a14, #37531c);
+  background-image:
+    linear-gradient(150deg, #1c2a1466, #37531c40),
+    url("/sports/gym.jpg");
 }
 
 .sp-program-art.studio {
-  background:
-    radial-gradient(circle at 30% 40%, #c8f54240, transparent 40%),
-    radial-gradient(circle at 72% 66%, #7ec8ff2e, transparent 44%),
-    linear-gradient(150deg, #17130a, #3d3413);
+  background-image:
+    linear-gradient(150deg, #17130a4d, #3d341333),
+    url("/sports/studio.jpg");
 }
 
 .sp-program-art.pool {
-  background:
-    repeating-linear-gradient(0deg, #ffffff1c 0 3px, transparent 3px 52px),
-    linear-gradient(150deg, #0c2431, #1c5d74);
+  background-image:
+    linear-gradient(150deg, #0c243140, #1c5d7440),
+    url("/sports/pool.jpg");
 }
 
 .sp-program-art.tennis {
-  background:
-    linear-gradient(#e8ffd91f 3px, transparent 3px) center / 100% 50%,
-    linear-gradient(90deg, transparent 49.5%, #e8ffd93d 49.5% 50.5%, transparent 50.5%),
-    linear-gradient(150deg, #14260f, #3f6d21);
+  background-image:
+    linear-gradient(150deg, #14260f40, #3f6d2140),
+    url("/sports/tennis.jpg");
 }
 
 /* ---------- schedule ---------- */

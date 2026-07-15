@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
 import ScrollReveal from "../components/scroll-reveal";
@@ -207,6 +208,7 @@ export default function Sports() {
 
       {/* ---------- hero ---------- */}
       <section className="sp-hero">
+        <img className="sp-hero-bg" src="/sports/hero.jpg" alt="" aria-hidden />
         <div className="sp-court" aria-hidden />
         <div className="sp-hero-copy">
           <span className="sp-kicker">AXIS SPORTS CLUB — OPEN 6:00–23:00</span>
