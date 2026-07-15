@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import {
@@ -16,6 +17,7 @@ import {
 type Product = {
   id: string;
   emoji: string;
+  img: string;
   name: string;
   series: string;
   price: number;
@@ -28,14 +30,14 @@ const SHIPPING = 600;
 const FREE_SHIPPING_OVER = 15000;
 
 const PRODUCTS: Product[] = [
-  { id: "gx01", emoji: "🤖", name: "超合金ロボ GX-01", series: "機動戦記アルヴァ", price: 12800, badge: "RARE", condition: "美品・箱付き", stock: 2 },
-  { id: "card", emoji: "🎴", name: "限定トレーディングカード", series: "TCG レジェンド", price: 4200, badge: "NEW", condition: "未開封", stock: 12 },
-  { id: "plush", emoji: "🧸", name: "復刻ぬいぐるみ 1998", series: "ぽけっとフレンズ", price: 8900, badge: "", condition: "タグ付き", stock: 5 },
-  { id: "game", emoji: "🎮", name: "レトロゲームソフト", series: "スペースクエスト", price: 6480, badge: "SALE", condition: "動作確認済み", stock: 8 },
-  { id: "figure", emoji: "🗿", name: "1/7スケールフィギュア", series: "夜明けのセレナーデ", price: 23800, badge: "RARE", condition: "新品未開封", stock: 1 },
-  { id: "comic", emoji: "📚", name: "初版コミック全巻セット", series: "鋼の詩人", price: 15600, badge: "", condition: "帯付き", stock: 3 },
-  { id: "disc", emoji: "💿", name: "サントラ LP レコード", series: "アルヴァ OST", price: 5400, badge: "NEW", condition: "美品", stock: 7 },
-  { id: "badge", emoji: "🎖️", name: "缶バッジコンプセット", series: "きらめきカフェ", price: 3200, badge: "SALE", condition: "全12種", stock: 15 },
+  { id: "gx01", emoji: "🤖", img: "/goods/gx01.jpg", name: "超合金ロボ GX-01", series: "機動戦記アルヴァ", price: 12800, badge: "RARE", condition: "美品・箱付き", stock: 2 },
+  { id: "card", emoji: "🎴", img: "/goods/card.jpg", name: "限定トレーディングカード", series: "TCG レジェンド", price: 4200, badge: "NEW", condition: "未開封", stock: 12 },
+  { id: "plush", emoji: "🧸", img: "/goods/plush.jpg", name: "復刻ぬいぐるみ 1998", series: "ぽけっとフレンズ", price: 8900, badge: "", condition: "タグ付き", stock: 5 },
+  { id: "game", emoji: "🎮", img: "/goods/game.jpg", name: "レトロゲームソフト", series: "スペースクエスト", price: 6480, badge: "SALE", condition: "動作確認済み", stock: 8 },
+  { id: "figure", emoji: "🗿", img: "/goods/figure.jpg", name: "1/7スケールフィギュア", series: "夜明けのセレナーデ", price: 23800, badge: "RARE", condition: "新品未開封", stock: 1 },
+  { id: "comic", emoji: "📚", img: "/goods/comic.jpg", name: "初版コミック全巻セット", series: "鋼の詩人", price: 15600, badge: "", condition: "帯付き", stock: 3 },
+  { id: "disc", emoji: "💿", img: "/goods/disc.jpg", name: "サントラ LP レコード", series: "アルヴァ OST", price: 5400, badge: "NEW", condition: "美品", stock: 7 },
+  { id: "badge", emoji: "🎖️", img: "/goods/badge.jpg", name: "缶バッジコンプセット", series: "きらめきカフェ", price: 3200, badge: "SALE", condition: "全12種", stock: 15 },
 ];
 
 const CATEGORIES = [
@@ -179,11 +181,7 @@ export default function Goods() {
               </div>
             </div>
             <div className="g-visual">
-              <div className="toy-box">
-                <div className="toy-face">
-                  <i className="toy-mouth" />
-                </div>
-              </div>
+              <img className="g-hero-photo" src="/goods/hero.jpg" alt="棚に並ぶコレクターズグッズ" />
             </div>
           </section>
 
@@ -225,7 +223,7 @@ export default function Goods() {
                           {product.badge}
                         </span>
                       )}
-                      <span className="product-emoji">{product.emoji}</span>
+                      <img className="product-photo" src={product.img} alt={product.name} loading="lazy" />
                       <span className="product-stock">残り{product.stock - inCart}点</span>
                     </div>
 
