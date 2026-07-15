@@ -382,6 +382,10 @@
   background: radial-gradient(120% 140% at 80% 100%, #ff6b3530, transparent 60%);
 }
 
+.h-work.steel::before {
+  background: radial-gradient(120% 140% at 80% 100%, #1fe3c830, transparent 60%);
+}
+
 .h-work:hover {
   transform: translateY(-4px);
   border-color: #ffffff33;
@@ -479,6 +483,12 @@
     url("/ramen/bowl-shoyu.jpg") center / cover;
 }
 
+.h-work-thumb.steel {
+  background:
+    linear-gradient(140deg, #0b0d1066, #12151a88),
+    url("/transport/sunset.jpg") center / cover;
+}
+
 .thumb-art {
   width: 74px;
   height: 74px;
@@ -525,8 +535,9 @@
   box-shadow: 0 0 48px #ffcc0088;
 }
 
-/* Real photo used for the ramen thumbnail — hide the CSS art. */
-.h-work-thumb.ember .thumb-art {
+/* Real photos used for these thumbnails — hide the CSS art. */
+.h-work-thumb.ember .thumb-art,
+.h-work-thumb.steel .thumb-art {
   display: none;
 }
 

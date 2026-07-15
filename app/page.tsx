@@ -63,6 +63,16 @@ const works = [
     stack: ["Menu UI", "Store Info", "SNS"],
     tone: "ember",
   },
+  {
+    href: "/transport",
+    no: "07",
+    year: "2026",
+    tag: "LOGISTICS / RECRUIT",
+    title: "STRADA EXPRESS",
+    desc: "運送会社のドライバー採用サイト。20〜40代ドライバーに向けた、疾走感のあるスタイリッシュな求人デザイン。",
+    stack: ["Recruit", "Income Sim", "Driver"],
+    tone: "steel",
+  },
 ];
 
 const marquee = [
@@ -145,7 +155,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／06</em>
+            作成サイト一覧<em>／07</em>
           </h2>
         </header>
 
