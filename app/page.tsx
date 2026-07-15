@@ -53,6 +53,16 @@ const works = [
     stack: ["Team Branding", "Schedule", "Recruit"],
     tone: "sun",
   },
+  {
+    href: "/ramen",
+    no: "06",
+    year: "2026",
+    tag: "RESTAURANT / RAMEN",
+    title: "らーめん 灯火",
+    desc: "町のらーめん店の公式サイト。湯気のシズル感と店主のこだわりが伝わる、あたたかな和モダンデザイン。",
+    stack: ["Menu UI", "Store Info", "SNS"],
+    tone: "ember",
+  },
 ];
 
 const marquee = [
@@ -135,7 +145,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／05</em>
+            作成サイト一覧<em>／06</em>
           </h2>
         </header>
 
