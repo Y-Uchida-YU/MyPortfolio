@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
 import ScrollReveal from "../components/scroll-reveal";
@@ -161,6 +162,7 @@ export default function Jobs() {
 
       {/* ---------- hero ---------- */}
       <section className="j-hero">
+        <img className="j-hero-bg" src="/jobs/hero.jpg" alt="" aria-hidden />
         <div className="j-blueprint" aria-hidden />
         <svg className="j-crane" viewBox="0 0 400 300" aria-hidden>
           <g stroke="currentColor" strokeWidth="2" fill="none">
@@ -214,7 +216,7 @@ export default function Jobs() {
       <section className="j-message">
         <div className="j-message-visual" data-reveal>
           <div className="j-portrait">
-            <span>HK</span>
+            <img src="/jobs/building.jpg" alt="建設中の建物" />
           </div>
           <div className="j-portrait-cap">
             代表取締役社長

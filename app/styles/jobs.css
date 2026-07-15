@@ -114,6 +114,31 @@
   overflow: hidden;
 }
 
+.j-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.j-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(92deg, #12161cf5 0%, #12161cdd 44%, #12161c85 100%);
+}
+
+.j-hero-copy {
+  z-index: 2;
+}
+
+.j-crane {
+  z-index: 1;
+}
+
 .j-crane {
   position: absolute;
   right: 3vw;
@@ -313,24 +338,23 @@
 
 .j-portrait {
   aspect-ratio: 0.85;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   background: linear-gradient(150deg, #2a323e, #12161c);
   position: relative;
+}
+
+.j-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .j-portrait::after {
   content: "";
   position: absolute;
   inset: 14px;
-  border: 1px solid #ffffff21;
-}
-
-.j-portrait span {
-  font-size: clamp(60px, 8vw, 110px);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  color: var(--safety);
+  border: 1px solid #ffffff3d;
+  pointer-events: none;
 }
 
 .j-portrait-cap {
@@ -470,56 +494,37 @@
   background: var(--concrete);
 }
 
-/* Abstract construction art, one per field. */
+/* Real construction photos, one per field. */
 .j-field-art {
   position: relative;
   overflow: hidden;
   background: var(--steel);
+  background-size: cover;
+  background-position: center;
 }
 
-.j-field-art::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.j-field-art.kanri {
   background-image:
-    linear-gradient(#ffffff10 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff10 1px, transparent 1px);
-  background-size: 28px 28px;
+    linear-gradient(150deg, #12161c40, #12161c66),
+    url("/jobs/kanri.jpg");
 }
 
-.j-field-art::after {
-  content: "";
-  position: absolute;
-  transition: 0.6s var(--ease);
+.j-field-art.sekkei {
+  background-image:
+    linear-gradient(150deg, #12161c40, #12161c59),
+    url("/jobs/sekkei.jpg");
 }
 
-.j-field-art.kanri::after {
-  inset: 26% 30%;
-  border: 3px solid var(--safety);
-  transform: rotate(12deg);
+.j-field-art.setsubi {
+  background-image:
+    linear-gradient(150deg, #12161c40, #12161c66),
+    url("/jobs/setsubi.jpg");
 }
 
-.j-field-art.sekkei::after {
-  inset: 24% 28%;
-  border: 3px solid var(--safety);
-  border-radius: 50%;
-  border-right-color: transparent;
-  animation: spin-slow 8s linear infinite;
-}
-
-.j-field-art.setsubi::after {
-  inset: 34% 24%;
-  background:
-    repeating-linear-gradient(90deg, var(--safety) 0 4px, transparent 4px 22px);
-}
-
-.j-field-art.dx::after {
-  inset: 28% 30%;
-  border: 3px solid var(--safety);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 14px #ffd20014,
-    0 0 0 30px #ffd2000a;
+.j-field-art.dx {
+  background-image:
+    linear-gradient(150deg, #12161c40, #12161c66),
+    url("/jobs/dx.jpg");
 }
 
 /* ---------- people ---------- */
