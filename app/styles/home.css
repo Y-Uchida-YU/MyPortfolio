@@ -458,23 +458,33 @@
 }
 
 .h-work-thumb.coral {
-  background: linear-gradient(140deg, #ff7a4d, #ff3d63);
+  background:
+    linear-gradient(140deg, #ff7a4d59, #ff3d6359),
+    url("/goods/hero.jpg") center / cover;
 }
 
 .h-work-thumb.amber {
-  background: linear-gradient(140deg, #1d2b3f, #35507a);
+  background:
+    linear-gradient(140deg, #1d2b3f66, #35507a55),
+    url("/jobs/hero.jpg") center / cover;
 }
 
 .h-work-thumb.violet {
-  background: linear-gradient(140deg, #1a1230, #4b2ea8);
+  background:
+    linear-gradient(140deg, #1a1230b3, #4b2ea8a6),
+    url("/tech/server.jpg") center / cover;
 }
 
 .h-work-thumb.lime {
-  background: linear-gradient(140deg, #101b0e, #2e5d1f);
+  background:
+    linear-gradient(140deg, #101b0e73, #2e5d1f66),
+    url("/sports/hero.jpg") center / cover;
 }
 
 .h-work-thumb.sun {
-  background: linear-gradient(140deg, #ff8a00, #1780c9);
+  background:
+    linear-gradient(140deg, #ff8a0066, #1780c959),
+    url("/baseball/field.jpg") center / cover;
 }
 
 .h-work-thumb.ember {
@@ -535,9 +545,8 @@
   box-shadow: 0 0 48px #ffcc0088;
 }
 
-/* Real photos used for these thumbnails — hide the CSS art. */
-.h-work-thumb.ember .thumb-art,
-.h-work-thumb.steel .thumb-art {
+/* Every thumbnail now uses a real photo — hide the CSS art overlays. */
+.thumb-art {
   display: none;
 }
 

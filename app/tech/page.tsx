@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -407,6 +408,7 @@ export default function Tech() {
 
       {/* ---------- finale ---------- */}
       <section className="t-finale" id="contact">
+        <img className="t-finale-bg" src="/tech/server.jpg" alt="" aria-hidden />
         <div className="t-finale-orb" aria-hidden />
         <div className="t-finale-copy">
           <h2>
