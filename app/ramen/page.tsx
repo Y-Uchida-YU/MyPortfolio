@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
 import ScrollReveal from "../components/scroll-reveal";
@@ -19,22 +20,31 @@ const CRAFT = [
     title: "スープ",
     lead: "朝五時、寸胴に火が入る。",
     body: "大山どりの丸鶏と香味野菜を六時間、あくを引きながらじっくり炊き上げます。鰹節と鯖節の魚介出汁を合わせるのは、提供する直前。二つの出汁が丼の中ではじめて出会う、その一瞬の香りまで設計しています。",
-    tone: "soup",
+    img: "/ramen/soup.jpg",
+    alt: "湯気の立つ醤油らーめんのスープ",
   },
   {
     icon: "弐",
     title: "麺",
     lead: "小麦の香りまで、ごちそう。",
-    body: "国産小麦を三種ブレンドした自家製の中細ストレート麺。加水率は季節と湿度で毎朝調整します。すすった瞬間に鼻へ抜ける小麦の香りと、スープを持ち上げる絶妙な啜り心地を両立させました。",
-    tone: "noodle",
+    body: "国産小麦を三種ブレンドした自家製の中細ストレート麺。加水率は季節と湿度で毎朝調整します。茹で上げた麺は力強い湯切りで一気に水を落とし、すすった瞬間に鼻へ抜ける小麦の香りを閉じ込めます。",
+    img: "/ramen/noodle.jpg",
+    alt: "打ちたての自家製中細ストレート麺",
   },
   {
     icon: "参",
     title: "チャーシュー",
     lead: "低温でとろける、吊るし焼き。",
     body: "豚肩ロースは釜で吊るし焼きに、鶏むねは低温調理でしっとりと。一杯に二種のチャーシューを忍ばせています。切り置きはせず、注文が入ってから一枚ずつ切り出すのがうちの決まりです。",
-    tone: "char",
+    img: "/ramen/chashu.jpg",
+    alt: "麺の上にのった炙りチャーシュー",
   },
+];
+
+const SHOWCASE: [string, string, string][] = [
+  ["/ramen/bowl-shoyu.jpg", "醤油らーめん", "看板の一杯"],
+  ["/ramen/bowl-shio.jpg", "塩らーめん", "貝出汁の香り"],
+  ["/ramen/chashu.jpg", "特製全部のせ", "叉焼二種＋味玉"],
 ];
 
 const CATS = [
@@ -170,23 +180,14 @@ export default function Ramen() {
           </div>
         </div>
 
-        <div className="rm-bowl-scene" aria-hidden>
-          <span className="rm-steam s1" />
-          <span className="rm-steam s2" />
-          <span className="rm-steam s3" />
-          <div className="rm-bowl">
-            <div className="rm-soup">
-              <i className="naruto" />
-              <i className="egg" />
-              <i className="chashu" />
-              <i className="nori" />
-              <i className="negi n1" />
-              <i className="negi n2" />
-              <i className="negi n3" />
-            </div>
-            <div className="rm-bowl-body" />
-            <div className="rm-bowl-foot" />
-          </div>
+        <div className="rm-hero-photo">
+          <span className="rm-steam s1" aria-hidden />
+          <span className="rm-steam s2" aria-hidden />
+          <span className="rm-steam s3" aria-hidden />
+          <img src="/ramen/hero.jpg" alt="炊きたての特製醤油らーめん" />
+          <span className="rm-hero-photo-tag">
+            <b>名物</b>特製醤油らーめん
+          </span>
         </div>
       </section>
 
@@ -221,7 +222,8 @@ export default function Ramen() {
               data-reveal
               style={{ "--reveal-delay": `${index * 0.1}s` } as React.CSSProperties}
             >
-              <div className={`rm-craft-art ${item.tone}`}>
+              <div className="rm-craft-photo">
+                <img src={item.img} alt={item.alt} loading="lazy" />
                 <b>{item.icon}</b>
               </div>
               <span className="rm-craft-name">{item.title}</span>
@@ -231,8 +233,21 @@ export default function Ramen() {
           ))}
         </div>
 
+        <div className="rm-showcase" data-reveal>
+          {SHOWCASE.map(([src, title, note]) => (
+            <figure key={title}>
+              <img src={src} alt={title} loading="lazy" />
+              <figcaption>
+                <b>{title}</b>
+                <small>{note}</small>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
         <div className="rm-owner" data-reveal>
           <div className="rm-owner-photo">
+            <img src="/ramen/owner.jpg" alt="厨房に立つ店主" loading="lazy" />
             <span>店主</span>
           </div>
           <div className="rm-owner-body">
