@@ -136,6 +136,8 @@ export default function Baseball() {
 
       {/* ---------- hero ---------- */}
       <section className="bb-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="bb-hero-bg" src="/baseball/field.jpg" alt="" aria-hidden />
         <div className="bb-sun" aria-hidden />
         <div className="bb-stripes" aria-hidden />
         <div className="bb-hero-copy">
@@ -176,7 +178,8 @@ export default function Baseball() {
       <section className="bb-message" id="about">
         <div className="bb-message-visual" data-reveal>
           <div className="bb-portrait">
-            <span>監督</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/baseball/glove.jpg" alt="使い込まれたグローブと白球" />
           </div>
           <div className="bb-portrait-cap">
             監督

@@ -114,6 +114,23 @@
   overflow: clip;
 }
 
+.bb-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.bb-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, #0d63b0e6 0%, #1e86d4b8 46%, #f6fbffe0 100%);
+}
+
 .bb-kicker,
 .bb-label {
   font: 800 11px var(--font-mono), monospace;
@@ -123,8 +140,13 @@
 
 .bb-hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 920px;
+}
+
+.bb-sun,
+.bb-stripes {
+  z-index: 1;
 }
 
 .bb-hero h1 {
@@ -273,12 +295,14 @@
 .bb-portrait {
   aspect-ratio: 1;
   border-radius: 28px;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   background: linear-gradient(150deg, var(--bb-sky), var(--bb-navy));
-  color: #fff;
-  font-size: 22px;
-  font-weight: 800;
+}
+
+.bb-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .bb-portrait-cap {
@@ -407,26 +431,26 @@
 
 .bb-value-art {
   min-height: 300px;
+  background-size: cover;
+  background-position: center;
 }
 
 .bb-value-art.zenryoku {
-  background:
-    radial-gradient(circle at 30% 30%, #ffc70055, transparent 45%),
-    repeating-linear-gradient(-38deg, #ffffff00 0 30px, #ff443318 30px 34px),
-    linear-gradient(150deg, #ff8a5c, var(--bb-red));
+  background-image:
+    linear-gradient(150deg, #ff8a5c55, #ff443366),
+    url("/baseball/boy.jpg");
 }
 
 .bb-value-art.nakama {
-  background:
-    radial-gradient(circle at 70% 30%, #ffffff40, transparent 40%),
-    radial-gradient(circle at 30% 70%, #ffffff2a, transparent 40%),
-    linear-gradient(150deg, var(--bb-sky), var(--bb-navy));
+  background-image:
+    linear-gradient(150deg, #1288e04d, #0a1e3c73),
+    url("/baseball/pitch.jpg");
 }
 
 .bb-value-art.seicho {
-  background:
-    repeating-linear-gradient(0deg, #ffffff22 0 3px, transparent 3px 40px),
-    linear-gradient(150deg, #3ec97a, #0f7a45);
+  background-image:
+    linear-gradient(150deg, #3ec97a4d, #0f7a4573),
+    url("/baseball/swing.jpg");
 }
 
 /* ---------- schedule ---------- */
