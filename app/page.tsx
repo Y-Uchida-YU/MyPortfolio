@@ -73,6 +73,16 @@ const works = [
     stack: ["Recruit", "Income Sim", "Driver"],
     tone: "steel",
   },
+  {
+    href: "/yakitori",
+    no: "08",
+    year: "2026",
+    tag: "RESTAURANT / YAKITORI",
+    title: "炭火焼鳥 炙",
+    desc: "路地裏の炭火焼鳥店の公式サイト。漆黒に炭火の朱が灯る、煙の気配まで伝わる大人の和デザイン。",
+    stack: ["Menu UI", "Store Info", "Reserve"],
+    tone: "coal",
+  },
 ];
 
 const marquee = [
@@ -155,7 +165,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／07</em>
+            作成サイト一覧<em>／08</em>
           </h2>
         </header>
 

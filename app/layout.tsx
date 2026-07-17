@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Yuta Uchida — Web Designer & Developer",
-    description: "作成サイト一覧 2026 — EC / Recruit / Blockchain / Sports / Team / Restaurant / Logistics",
+    description: "作成サイト一覧 2026 — EC / Recruit / Blockchain / Sports / Team / Restaurant / Logistics / Yakitori",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Yuta Uchida Selected Works 2026" }],
   },
