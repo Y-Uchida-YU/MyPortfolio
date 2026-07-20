@@ -83,6 +83,16 @@ const works = [
     stack: ["Menu UI", "Store Info", "Reserve"],
     tone: "coal",
   },
+  {
+    href: "/clinic",
+    no: "09",
+    year: "2026",
+    tag: "MEDICAL / CLINIC",
+    title: "みなも内科・小児科クリニック",
+    desc: "地域のかかりつけ医院の公式サイト。白基調のクリーンで穏やかな設計で、診療時間・外来案内・初診の流れ・アクセスまで、これ一枚で迷わず来院できる導線に。",
+    stack: ["Clinic", "Schedule UI", "Access"],
+    tone: "care",
+  },
 ];
 
 const marquee = [
@@ -182,7 +192,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／08</em>
+            作成サイト一覧<em>／09</em>
           </h2>
         </header>
 
