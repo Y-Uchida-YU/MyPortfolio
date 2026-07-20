@@ -121,28 +121,45 @@ export default function Home() {
         </span>
       </nav>
 
-      <section className="h-hero">
-        <p className="h-eyebrow">WEB DESIGN &amp; DEVELOPMENT — TOKYO, JAPAN</p>
-        <h1>
-          <span className="line">
-            <b style={{ "--i": 0 } as React.CSSProperties}>My</b>
-          </span>
-          <span className="line">
-            <b style={{ "--i": 1 } as React.CSSProperties}>
-              <em>Portfolio</em>
-            </b>
-          </span>
-        </h1>
-        <div className="h-hero-foot">
-          <p>
-            伝えたい価値を、迷わず届く体験へ。
+      <section className="h-about" id="about">
+        <div className="h-portrait" data-reveal>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="h-portrait-photo" src="/portrait.png" alt="内田 裕太のアバターイラスト" />
+          <span className="h-portrait-ring" />
+          <span className="h-portrait-badge">
+            CREATIVE
             <br />
-            企画からデザイン、実装まで一貫してつくります。
+            DEVELOPER
+          </span>
+        </div>
+
+        <div className="h-about-body" data-reveal style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}>
+          <span className="h-label">ABOUT ME</span>
+          <h2>
+            内田 裕太 <small>YUTA UCHIDA</small>
+          </h2>
+          <p>
+            Webサイトの設計とフロントエンド実装を中心に活動しています。業界ごとの空気感を捉え、情報を整理し、
+            見る人が自然に次の一歩へ進めるサイトづくりが得意です。デザインとコードの両方を行き来しながら、
+            細部の手触りまで作り込みます。
           </p>
-          <a href="#works" className="h-cta" aria-label="作成サイト一覧を見る">
-            <span>作成サイト一覧</span>
-            <i>↘</i>
-          </a>
+
+          <ol className="h-timeline">
+            <li>
+              <span className="h-timeline-year">2020 — 2023</span>
+              <div className="h-timeline-body">
+                <h3>独立系SIer</h3>
+                <p>業務Webサイト・業務アプリケーションの要件定義〜保守運用までを担当。</p>
+              </div>
+            </li>
+            <li className="is-current">
+              <span className="h-timeline-year">2023 — 現在</span>
+              <div className="h-timeline-body">
+                <h3>ユーザ系金融SIer</h3>
+                <p>案件PMとして要件定義〜リリースまでのプロジェクト管理、リリース後の運用を担当。</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -203,48 +220,6 @@ export default function Home() {
               </span>
             </Link>
           ))}
-        </div>
-      </section>
-
-      <section className="h-about" id="about">
-        <div className="h-portrait" data-reveal>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="h-portrait-photo" src="/portrait.png" alt="内田 裕太のアバターイラスト" />
-          <span className="h-portrait-ring" />
-          <span className="h-portrait-badge">
-            CREATIVE
-            <br />
-            DEVELOPER
-          </span>
-        </div>
-
-        <div className="h-about-body" data-reveal style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}>
-          <span className="h-label">ABOUT ME</span>
-          <h2>
-            内田 裕太 <small>YUTA UCHIDA</small>
-          </h2>
-          <p>
-            Webサイトの設計とフロントエンド実装を中心に活動しています。業界ごとの空気感を捉え、情報を整理し、
-            見る人が自然に次の一歩へ進めるサイトづくりが得意です。デザインとコードの両方を行き来しながら、
-            細部の手触りまで作り込みます。
-          </p>
-
-          <ol className="h-timeline">
-            <li>
-              <span className="h-timeline-year">2020 — 2023</span>
-              <div className="h-timeline-body">
-                <h3>独立系SIer</h3>
-                <p>業務Webサイト・業務アプリケーションの要件定義〜保守運用までを担当。</p>
-              </div>
-            </li>
-            <li className="is-current">
-              <span className="h-timeline-year">2023 — 現在</span>
-              <div className="h-timeline-body">
-                <h3>ユーザ系金融SIer</h3>
-                <p>案件PMとして要件定義〜リリースまでのプロジェクト管理、リリース後の運用を担当。</p>
-              </div>
-            </li>
-          </ol>
         </div>
       </section>
 

@@ -175,118 +175,11 @@
   100% { box-shadow: 0 0 0 0 #3ddc8400; }
 }
 
-/* ---------- hero ---------- */
-.h-hero {
-  min-height: calc(100svh - 84px);
-  padding: 6vw 5vw 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.h-eyebrow,
 .h-label {
   font: 600 11px var(--font-mono), monospace;
   letter-spacing: 0.2em;
   color: #8f8b84;
   margin: 0;
-}
-
-.h-hero h1 {
-  margin: 44px 0 60px;
-  font-size: clamp(64px, 11.5vw, 190px);
-  font-weight: 600;
-  line-height: 0.86;
-  letter-spacing: -0.055em;
-}
-
-.h-hero .line {
-  display: block;
-  overflow: hidden;
-}
-
-.h-hero .line b {
-  display: inline-block;
-  margin-right: 0.22em;
-  font-weight: inherit;
-  transform: translateY(105%);
-  animation: rise 1.1s var(--ease) forwards;
-  animation-delay: calc(var(--i) * 0.11s + 0.15s);
-}
-
-.h-hero em {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--coral);
-}
-
-@keyframes rise {
-  to { transform: none; }
-}
-
-.h-hero-foot {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
-  padding-left: 45%;
-}
-
-.h-hero-foot p {
-  margin: 0;
-  font-size: clamp(15px, 1.35vw, 20px);
-  line-height: 1.9;
-  color: #c8c5bf;
-}
-
-.h-cta {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  border: 1px solid #ffffff2e;
-  border-radius: 99px;
-  padding: 12px 12px 12px 24px;
-  font: 600 10px var(--font-mono), monospace;
-  letter-spacing: 0.16em;
-  transition:
-    background 0.35s var(--ease),
-    color 0.35s var(--ease);
-}
-
-.h-cta i {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-style: normal;
-  font-size: 17px;
-  background: var(--coral);
-  color: #fff;
-  transition: transform 0.4s var(--ease);
-}
-
-.h-cta {
-  transition:
-    background 0.35s var(--ease),
-    color 0.35s var(--ease),
-    transform 0.12s ease-out;
-}
-
-.h-cta:hover {
-  background: var(--paper);
-  color: var(--ink);
-}
-
-.h-cta:hover i {
-  transform: rotate(-45deg);
-}
-
-/* Instant "give" on press — feedback lives on pointer-down, not release. */
-.h-cta:active {
-  transform: scale(0.97);
 }
 
 /* ---------- marquee ---------- */
@@ -813,13 +706,6 @@
     display: none;
   }
 
-  .h-hero-foot {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 0;
-    gap: 34px;
-  }
-
   .h-work {
     grid-template-columns: 40px 1fr;
     gap: 18px;
@@ -849,10 +735,6 @@
 @media (max-width: 560px) {
   .h-status {
     display: none;
-  }
-
-  .h-hero h1 {
-    margin: 30px 0 44px;
   }
 
   .h-footer-foot {
