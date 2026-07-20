@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CursorGlow from "./components/cursor-glow";
 import ScrollReveal from "./components/scroll-reveal";
+import AboutPlay from "./components/about-play";
 
 const works = [
   {
@@ -109,7 +110,7 @@ export default function Home() {
     <main className="home">
       <CursorGlow />
       <ScrollReveal />
-      <div className="grain" aria-hidden />
+      <AboutPlay />
       <div className="home-aurora" aria-hidden>
         <span className="blob b1" />
         <span className="blob b2" />
@@ -140,6 +141,9 @@ export default function Home() {
             CREATIVE
             <br />
             DEVELOPER
+          </span>
+          <span className="h-portrait-hi" aria-hidden>
+            Hi 👋
           </span>
         </div>
 
