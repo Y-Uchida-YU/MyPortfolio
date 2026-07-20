@@ -228,6 +228,23 @@ export default function Home() {
             見る人が自然に次の一歩へ進めるサイトづくりが得意です。デザインとコードの両方を行き来しながら、
             細部の手触りまで作り込みます。
           </p>
+
+          <ol className="h-timeline">
+            <li>
+              <span className="h-timeline-year">2020 — 2023</span>
+              <div className="h-timeline-body">
+                <h3>独立系SIer</h3>
+                <p>業務Webサイト・業務アプリケーションの要件定義〜保守運用までを担当。</p>
+              </div>
+            </li>
+            <li className="is-current">
+              <span className="h-timeline-year">2023 — 現在</span>
+              <div className="h-timeline-body">
+                <h3>ユーザ系金融SIer</h3>
+                <p>案件PMとして要件定義〜リリースまでのプロジェクト管理、リリース後の運用を担当。</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 

@@ -693,6 +693,79 @@
   color: #b4b0a9;
 }
 
+/* Career timeline. A single hairline runs down the left; each role hangs a dot
+   off it, with the current role marked in coral. */
+.h-timeline {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+.h-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 28px;
+  padding: 0 0 30px 26px;
+  border-left: 1px solid #ffffff1f;
+}
+
+.h-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot sitting on the hairline, aligned to the year label's baseline row. */
+.h-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6f6b64;
+  box-shadow: 0 0 0 4px var(--ink);
+}
+
+.h-timeline li.is-current::before {
+  background: var(--coral);
+  box-shadow:
+    0 0 0 4px var(--ink),
+    0 0 14px #ff5b3caa;
+}
+
+.h-timeline-year {
+  font: 600 12px var(--font-mono), monospace;
+  letter-spacing: 0.12em;
+  color: #8f8b84;
+  padding-top: 2px;
+}
+
+.h-timeline li.is-current .h-timeline-year {
+  color: var(--coral);
+}
+
+.h-timeline-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.h-timeline-body p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #a9a59e;
+}
+
+@media (max-width: 560px) {
+  .h-timeline li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* ---------- footer ---------- */
 .h-footer {
   padding: 10vw 5vw 3vw;
