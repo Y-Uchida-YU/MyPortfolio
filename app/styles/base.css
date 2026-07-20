@@ -34,6 +34,14 @@ select {
   color: inherit;
 }
 
+/* Keyboard focus: a single, consistent ring so people always know where they
+   are (Apple: agency + craft). Pointer clicks stay ring-free via :focus-visible. */
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 /* Film grain layered over the whole document. */
 .grain {
   position: fixed;
@@ -90,6 +98,10 @@ select {
   transform: translateX(-4px);
 }
 
+.back-home:active {
+  transform: translateX(-4px) scale(0.96);
+}
+
 /* Case-study navs reserve this much room on the left so the floating pill
    never lands on their logo. */
 :root {
@@ -110,6 +122,23 @@ select {
   .back-home::before {
     content: "←";
     font-size: 14px;
+  }
+}
+
+/* Translucent chrome falls back to a solid, legible surface for anyone who
+   asks for less transparency or more contrast (Apple: materials + flexibility). */
+@media (prefers-reduced-transparency: reduce) {
+  .back-home {
+    background: #fff;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .back-home {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
   }
 }
 

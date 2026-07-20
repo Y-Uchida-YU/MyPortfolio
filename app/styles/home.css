@@ -94,6 +94,15 @@
   background: linear-gradient(#0a0a0bcc, #0a0a0b00);
 }
 
+/* Solid, opaque nav for reduced-transparency so links stay legible over
+   whatever scrolls beneath. */
+@media (prefers-reduced-transparency: reduce) {
+  .h-nav {
+    backdrop-filter: none;
+    background: var(--ink);
+  }
+}
+
 .h-logo {
   font-size: 28px;
   font-weight: 800;
@@ -259,6 +268,13 @@
   transition: transform 0.4s var(--ease);
 }
 
+.h-cta {
+  transition:
+    background 0.35s var(--ease),
+    color 0.35s var(--ease),
+    transform 0.12s ease-out;
+}
+
 .h-cta:hover {
   background: var(--paper);
   color: var(--ink);
@@ -266,6 +282,11 @@
 
 .h-cta:hover i {
   transform: rotate(-45deg);
+}
+
+/* Instant "give" on press — feedback lives on pointer-down, not release. */
+.h-cta:active {
+  transform: scale(0.97);
 }
 
 /* ---------- marquee ---------- */
@@ -394,6 +415,13 @@
   transform: translateY(-4px);
   border-color: #ffffff33;
   background: #ffffff0a;
+}
+
+/* Press settles the lifted card slightly back down + in, so a tap on the whole
+   row reads as a physical button, not just a link. */
+.h-work:active {
+  transform: translateY(-1px) scale(0.995);
+  transition: transform 0.1s ease-out;
 }
 
 .h-work:hover::before {
@@ -679,7 +707,9 @@
   font-size: clamp(20px, 2.4vw, 34px);
   padding-bottom: 8px;
   border-bottom: 1px solid #ffffff33;
-  transition: color 0.35s var(--ease);
+  transition:
+    color 0.35s var(--ease),
+    transform 0.12s ease-out;
 }
 
 .h-mail i {
@@ -688,6 +718,10 @@
 
 .h-mail:hover {
   color: var(--coral);
+}
+
+.h-mail:active {
+  transform: scale(0.99);
 }
 
 .h-footer-foot {
