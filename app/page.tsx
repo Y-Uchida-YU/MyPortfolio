@@ -94,6 +94,16 @@ const works = [
     stack: ["Clinic", "Schedule UI", "Access"],
     tone: "care",
   },
+  {
+    href: "/koden",
+    no: "10",
+    year: "2026",
+    tag: "E-COMMERCE / GIFT",
+    title: "香典返し 結 -yui-",
+    desc: "香典返し・法要ギフトECのフル改装。生成りの紙と藍の和モダンで、半返しの予算えらびからのし・挨拶状の指定まで、迷わせない購入導線に再設計。",
+    stack: ["EC UI", "Cart Flow", "Wa-Modern"],
+    tone: "yui",
+  },
 ];
 
 const marquee = [
@@ -196,7 +206,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／09</em>
+            作成サイト一覧<em>／10</em>
           </h2>
         </header>
 
