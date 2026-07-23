@@ -104,6 +104,16 @@ const works = [
     stack: ["EC UI", "Cart Flow", "Wa-Modern"],
     tone: "yui",
   },
+  {
+    href: "/beauty",
+    no: "11",
+    year: "2026",
+    tag: "MEDICAL / LP",
+    title: "LUMICA CLINIC",
+    desc: "美容皮膚科のキャンペーンLP。暖かく上品な美容トーンで、悩み診断・料金・症例から予約フォームまで、縦長1枚に成約導線を凝縮。追従CTAと予約モーダルを実装。",
+    stack: ["LP Design", "CV Flow", "Sticky CTA"],
+    tone: "rose",
+  },
 ];
 
 const marquee = [
@@ -206,7 +216,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／10</em>
+            作成サイト一覧<em>／11</em>
           </h2>
         </header>
 
