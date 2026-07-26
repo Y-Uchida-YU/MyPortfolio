@@ -114,6 +114,16 @@ const works = [
     stack: ["LP Design", "CV Flow", "Sticky CTA"],
     tone: "rose",
   },
+  {
+    href: "/car",
+    no: "12",
+    year: "2026",
+    tag: "AUTOMOTIVE / EV",
+    title: "AETHER One",
+    desc: "プレミアム電気自動車のブランドサイト。暗色×アクアの先進的な世界観で、色が切り替わるSVGカーとカラー／グレードのコンフィギュレーターを実装。選ぶと航続距離・0-100km/h・価格が動き、試乗予約まで導線化。",
+    stack: ["SVG Car", "Configurator", "Dark UI"],
+    tone: "carbon",
+  },
 ];
 
 const marquee = [
@@ -216,7 +226,7 @@ export default function Home() {
         <header className="h-section-head" data-reveal>
           <span className="h-label">WORKS</span>
           <h2>
-            作成サイト一覧<em>／11</em>
+            作成サイト一覧<em>／12</em>
           </h2>
         </header>
 
