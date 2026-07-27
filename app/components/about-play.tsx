@@ -6,11 +6,11 @@ import { useEffect } from "react";
  * Playful 3D tilt for the About portrait: the photo leans toward the pointer
  * while the cursor is over it, easing back to rest on leave. Skipped on touch
  * and reduced-motion. Mount once per page; drives the --rx / --ry CSS vars that
- * .h-portrait-photo reads.
+ * .pf-portrait img reads.
  */
 export default function AboutPlay() {
   useEffect(() => {
-    const portrait = document.querySelector<HTMLElement>(".h-portrait");
+    const portrait = document.querySelector<HTMLElement>(".pf-portrait");
     if (!portrait) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce), (hover: none)").matches) return;
 

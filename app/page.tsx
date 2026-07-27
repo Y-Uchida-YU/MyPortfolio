@@ -1,255 +1,283 @@
 import Link from "next/link";
-import CursorGlow from "./components/cursor-glow";
 import ScrollReveal from "./components/scroll-reveal";
 import AboutPlay from "./components/about-play";
+import HeroShowcase from "./components/hero-showcase";
+import WorksGallery from "./components/works-gallery";
+import { works } from "./works";
 
-const works = [
+const MAIL = "yuta.uchida.business@gmail.com";
+
+const ticker = [
+  "UI DESIGN",
+  "FRONTEND",
+  "INFORMATION ARCHITECTURE",
+  "ART DIRECTION",
+  "COPYWRITING",
+  "ACCESSIBILITY",
+];
+
+const capabilities = [
   {
-    href: "/goods",
-    no: "01",
-    year: "2026",
-    tag: "E-COMMERCE / REUSE",
-    title: "OTAKARA LOOP",
-    desc: "コレクターズグッズの買取・販売プラットフォーム。",
-    stack: ["EC UI", "Cart Flow"],
-    tone: "coral",
+    key: "Design",
+    label: "デザイン",
+    items: ["アートディレクション", "UIデザイン", "情報設計", "コピーライティング"],
   },
   {
-    href: "/jobs",
-    no: "02",
-    year: "2026",
-    tag: "RECRUITING SITE",
-    title: "HIRAKU 建設",
-    desc: "老舗建設会社の新卒・中途採用サイト。",
-    stack: ["Recruit"],
-    tone: "amber",
+    key: "Frontend",
+    label: "フロントエンド",
+    items: ["HTML / CSS", "TypeScript", "React / Next.js", "アクセシビリティ"],
   },
   {
-    href: "/tech",
-    no: "03",
-    year: "2026",
-    tag: "WEB3 / CORPORATE",
-    title: "NULL / PROTOCOL",
-    desc: "ITベンチャー企業を模して動きの多いサイトサンプル。",
-    stack: ["Interaction", "Canvas", "Motion"],
-    tone: "violet",
-  },
-  {
-    href: "/sports",
-    no: "04",
-    year: "2026",
-    tag: "SPORTS CLUB",
-    title: "AXIS SPORTS CLUB",
-    desc: "総合スポーツクラブの公式サイト。プログラム検索から料金プラン、体験予約までの導線を設計。",
-    stack: ["Fitness", "Schedule UI", "Pricing"],
-    tone: "lime",
-  },
-  {
-    href: "/baseball",
-    no: "05",
-    year: "2026",
-    tag: "SPORTS TEAM",
-    title: "汐風ボーイズ",
-    desc: "少年野球チームの公式サイト。夏の炎天下を駆け抜けるような、若さと熱量を前面に出したデザイン。",
-    stack: ["Team Branding", "Schedule", "Recruit"],
-    tone: "sun",
-  },
-  {
-    href: "/ramen",
-    no: "06",
-    year: "2026",
-    tag: "RESTAURANT / RAMEN",
-    title: "らーめん 灯火",
-    desc: "町のらーめん店の公式サイト。湯気のシズル感と店主のこだわりが伝わる、あたたかな和モダンデザイン。",
-    stack: ["Menu UI", "Store Info", "SNS"],
-    tone: "ember",
-  },
-  {
-    href: "/transport",
-    no: "07",
-    year: "2026",
-    tag: "LOGISTICS / RECRUIT",
-    title: "STRADA EXPRESS",
-    desc: "運送会社のドライバー採用サイト。20〜40代ドライバーに向けた、疾走感のあるスタイリッシュな求人デザイン。",
-    stack: ["Recruit", "Income Sim", "Driver"],
-    tone: "steel",
-  },
-  {
-    href: "/yakitori",
-    no: "08",
-    year: "2026",
-    tag: "RESTAURANT / YAKITORI",
-    title: "炭火焼鳥 炙",
-    desc: "路地裏の炭火焼鳥店の公式サイト。漆黒に炭火の朱が灯る、煙の気配まで伝わる大人の和デザイン。",
-    stack: ["Menu UI", "Store Info", "Reserve"],
-    tone: "coal",
-  },
-  {
-    href: "/clinic",
-    no: "09",
-    year: "2026",
-    tag: "MEDICAL / CLINIC",
-    title: "みなも内科・小児科クリニック",
-    desc: "地域のかかりつけ医院の公式サイト。白基調のクリーンで穏やかな設計で、診療時間・外来案内・初診の流れ・アクセスまで、これ一枚で迷わず来院できる導線に。",
-    stack: ["Clinic", "Schedule UI", "Access"],
-    tone: "care",
+    key: "Direction",
+    label: "ディレクション",
+    items: ["要件定義", "進行管理", "リリース・運用"],
   },
 ];
 
-const marquee = [
-  "UI / UX DESIGN",
-  "FRONTEND",
-  "INTERACTION",
-  "BRANDING",
-  "MOTION",
-  "ART DIRECTION",
+const career = [
+  {
+    period: "2020 — 2023",
+    org: "独立系SIer",
+    role: "システムエンジニア",
+    body: "業務Webサイト・業務アプリケーションの要件定義から設計・実装、保守運用までを担当。",
+  },
+  {
+    period: "2023 — 現在",
+    org: "ユーザ系金融SIer",
+    role: "プロジェクトマネージャー",
+    body: "案件PMとして要件定義からリリースまでのプロジェクト管理と、リリース後の運用を担当。",
+    current: true,
+  },
 ];
 
 export default function Home() {
   return (
-    <main className="home">
-      <CursorGlow />
+    <div className="pf" id="top">
       <ScrollReveal />
       <AboutPlay />
-      <div className="home-aurora" aria-hidden>
-        <span className="blob b1" />
-        <span className="blob b2" />
-        <span className="blob b3" />
-      </div>
+      <div className="pf-grain" aria-hidden />
 
-      <nav className="h-nav">
-        <Link href="/" className="h-logo">
+      <header className="pf-nav">
+        <Link href="/" className="pf-mark">
           YU<span>.</span>
         </Link>
-        <div className="h-links">
-          <a href="#works">WORKS</a>
+        <nav className="pf-nav-links" aria-label="ページ内ナビゲーション">
+          <a href="#works">
+            WORKS<em>{String(works.length).padStart(2, "0")}</em>
+          </a>
           <a href="#about">ABOUT</a>
           <a href="#contact">CONTACT</a>
-        </div>
-        <span className="h-status">
+        </nav>
+        <span className="pf-live">
           <i />
-          AVAILABLE FOR WORK
+          受注可能 <b>AVAILABLE</b>
         </span>
-      </nav>
+      </header>
 
-      <section className="h-about" id="about">
-        <div className="h-portrait" data-reveal>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="h-portrait-photo" src="/portrait.png" alt="内田 裕太のアバターイラスト" />
-          <span className="h-portrait-ring" />
-          <span className="h-portrait-badge">
-            CREATIVE
-            <br />
-            DEVELOPER
-          </span>
-          <span className="h-portrait-hi" aria-hidden>
-            Hi 👋
-          </span>
-        </div>
+      <main>
+        <section className="pf-hero">
+          <div className="pf-hero-top">
+            <p className="pf-eyebrow" data-reveal>
+              内田 裕太 — WEB DESIGNER &amp; FRONTEND DEVELOPER
+            </p>
+            <h1 data-reveal style={{ "--reveal-delay": "0.06s" } as React.CSSProperties}>
+              業界の空気を、
+              <br />
+              サイトの<span className="pf-mark-line">手ざわり</span>に。
+            </h1>
+          </div>
 
-        <div className="h-about-body" data-reveal style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}>
-          <span className="h-label">ABOUT ME</span>
-          <h2>
-            内田 裕太 <small>YUTA UCHIDA</small>
-          </h2>
-          <p>
-            Webサイトの設計とフロントエンド実装を中心に活動しています。業界ごとの空気感を捉え、情報を整理し、
-            見る人が自然に次の一歩へ進めるサイトづくりが得意です。デザインとコードの両方を行き来しながら、
-            細部の手触りまで作り込みます。
-          </p>
+          <div className="pf-hero-main">
+            <div className="pf-hero-copy">
+              <p className="pf-lead" data-reveal style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}>
+                業種ごとにまるで違う「らしさ」を読み解いて、色・文字・間合い・導線に落とし込む。
+                企画からデザイン、フロントエンド実装まで、ひとりで最後まで手を動かします。
+              </p>
 
-          <ol className="h-timeline">
-            <li>
-              <span className="h-timeline-year">2020 — 2023</span>
-              <div className="h-timeline-body">
-                <h3>独立系SIer</h3>
-                <p>業務Webサイト・業務アプリケーションの要件定義〜保守運用までを担当。</p>
+              <div className="pf-actions" data-reveal style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}>
+                <a className="pf-btn is-primary" href="#works">
+                  制作実績を見る
+                  <i />
+                </a>
+                <a className="pf-btn" href={`mailto:${MAIL}`}>
+                  お問い合わせ
+                </a>
               </div>
-            </li>
-            <li className="is-current">
-              <span className="h-timeline-year">2023 — 現在</span>
-              <div className="h-timeline-body">
-                <h3>ユーザ系金融SIer</h3>
-                <p>案件PMとして要件定義〜リリースまでのプロジェクト管理、リリース後の運用を担当。</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
 
-      <div className="h-marquee" aria-hidden>
-        <div className="h-marquee-track">
-          {[0, 1].map((copy) => (
-            <div className="h-marquee-group" key={copy}>
-              {marquee.map((item) => (
-                <span key={item}>
-                  {item}
-                  <i>✦</i>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <section className="h-works" id="works">
-        <header className="h-section-head" data-reveal>
-          <span className="h-label">WORKS</span>
-          <h2>
-            作成サイト一覧<em>／09</em>
-          </h2>
-        </header>
-
-        <div className="h-work-list">
-          {works.map((work, index) => (
-            <Link
-              href={work.href}
-              key={work.href}
-              className={`h-work ${work.tone}`}
-              data-reveal
-              style={{ "--reveal-delay": `${index * 0.08}s` } as React.CSSProperties}
-            >
-              <span className="h-work-no">{work.no}</span>
-
-              <div className="h-work-body">
-                <span className="h-work-tag">
-                  {work.tag} — {work.year}
-                </span>
-                <h3>{work.title}</h3>
-                <p>{work.desc}</p>
-                <div className="h-work-stack">
-                  {work.stack.map((chip) => (
-                    <span key={chip}>{chip}</span>
-                  ))}
+              <dl className="pf-facts">
+                <div>
+                  <dt>PROJECTS</dt>
+                  <dd>{String(works.length).padStart(2, "0")}</dd>
                 </div>
-              </div>
+                <div>
+                  <dt>SINCE</dt>
+                  <dd>2020</dd>
+                </div>
+                <div>
+                  <dt>BASE</dt>
+                  <dd>Tokyo, JP</dd>
+                </div>
+              </dl>
+            </div>
 
-              <div className={`h-work-thumb ${work.tone}`} aria-hidden>
-                <span className="thumb-art" />
-              </div>
+            <div className="pf-hero-stage" data-reveal style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}>
+              <HeroShowcase />
+            </div>
+          </div>
+        </section>
 
-              <span className="h-work-go">
-                VIEW
-                <i>↗</i>
-              </span>
-            </Link>
-          ))}
+        <div className="pf-ticker" aria-hidden>
+          <div className="pf-ticker-track">
+            {[0, 1].map((copy) => (
+              <div className="pf-ticker-group" key={copy}>
+                {ticker.map((item) => (
+                  <span key={item}>
+                    {item}
+                    <i />
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
 
-      <footer className="h-footer" id="contact">
-        <span className="h-label" data-reveal>
-          GET IN TOUCH
-        </span>
-        <a className="h-mail" href="mailto:yuta.uchida.business@gmail.com" data-reveal>
-          yuta.uchida.business@gmail.com
-          <i>↗</i>
-        </a>
-        <div className="h-footer-foot">
-          <span>PORTFOLIO © 2026 — YUTA UCHIDA</span>
+        <section className="pf-works" id="works">
+          <header className="pf-head" data-reveal>
+            <p className="pf-label">SELECTED WORKS</p>
+            <h2>
+              制作実績<em>{String(works.length).padStart(2, "0")}</em>
+            </h2>
+            <p className="pf-head-note">
+              架空のクライアントを想定し、業種ごとにゼロから設計・実装したサイトです。
+              コンセプト設計、コピー、デザイン、コーディングまですべて一人で担当しています。
+              カードはそのサイトの実際の画面 — カーソルを重ねるとページが流れていきます。
+            </p>
+          </header>
+
+          <WorksGallery />
+        </section>
+
+        <section className="pf-about" id="about">
+          <header className="pf-head" data-reveal>
+            <p className="pf-label">ABOUT</p>
+            <h2>
+              デザインとコードの
+              <br />
+              あいだを、行き来する。
+            </h2>
+          </header>
+
+          <div className="pf-about-grid">
+            <figure className="pf-portrait" data-reveal>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/portrait.jpg" alt="内田 裕太のアバターイラスト" />
+              <figcaption>
+                内田 裕太<span>YUTA UCHIDA — TOKYO</span>
+              </figcaption>
+            </figure>
+
+            <div className="pf-about-body" data-reveal style={{ "--reveal-delay": "0.08s" } as React.CSSProperties}>
+              <p className="pf-about-lead">
+                Webサイトの設計とフロントエンド実装を中心に活動しています。
+                業界ごとの空気感を捉え、情報を整理し、見る人が自然に次の一歩へ進めるサイトづくりが得意です。
+              </p>
+              <p>
+                本業ではSIerでプロジェクトマネージャーとして要件定義からリリース、運用までを見ています。
+                だからこそ「きれいに見える」だけで終わらせず、運用しやすさや更新のしやすさまで含めて設計するようにしています。
+                デザインとコードの両方を行き来しながら、細部の手触りまで作り込むのが好きです。
+              </p>
+
+              <h3 className="pf-sub">CAPABILITIES</h3>
+              <dl className="pf-caps">
+                {capabilities.map((cap) => (
+                  <div key={cap.key}>
+                    <dt>
+                      {cap.key}
+                      <span>{cap.label}</span>
+                    </dt>
+                    <dd>
+                      {cap.items.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <h3 className="pf-sub">CAREER</h3>
+              <ol className="pf-career">
+                {career.map((job) => (
+                  <li key={job.period} className={job.current ? "is-current" : undefined}>
+                    <span className="pf-career-period">{job.period}</span>
+                    <div>
+                      <h4>
+                        {job.org}
+                        <span>{job.role}</span>
+                      </h4>
+                      <p>{job.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="pf-contact" id="contact">
+        <div className="pf-contact-in">
+          <div>
+            <p className="pf-label" data-reveal>
+              CONTACT
+            </p>
+            <h2 data-reveal style={{ "--reveal-delay": "0.06s" } as React.CSSProperties}>
+              サイトのご相談、
+              <br />
+              お気軽にどうぞ。
+            </h2>
+            <a
+              className="pf-mail"
+              href={`mailto:${MAIL}`}
+              data-reveal
+              style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
+            >
+              {MAIL}
+              <i />
+            </a>
+            <p className="pf-note" data-reveal style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}>
+              制作のご依頼・ご相談は、通常2営業日以内にご返信します。
+            </p>
+          </div>
+
+          <dl className="pf-contact-info" data-reveal style={{ "--reveal-delay": "0.14s" } as React.CSSProperties}>
+            <div>
+              <dt>STATUS</dt>
+              <dd>
+                <span className="pf-dot" />
+                新規案件 受付中
+              </dd>
+            </div>
+            <div>
+              <dt>AREA</dt>
+              <dd>東京 / フルリモート</dd>
+            </div>
+            <div>
+              <dt>SCOPE</dt>
+              <dd>コーポレート / 採用サイト / 店舗サイト / LP / リニューアル</dd>
+            </div>
+            <div>
+              <dt>ROLE</dt>
+              <dd>設計・デザイン・フロントエンド実装</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="pf-foot">
+          <span>© 2026 YUTA UCHIDA</span>
           <span>DESIGNED &amp; BUILT IN TOKYO</span>
+          <a href="#top">PAGE TOP</a>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
